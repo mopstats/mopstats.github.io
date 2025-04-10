@@ -497,6 +497,9 @@ $( document ).ready(function() {
         },
     });
 
+    var boxchartsarr = [boxchart1, boxchart2, boxchart3];
+    var barchartsarr = [barchart1, barchart2, barchart3];
+
     function loadChart() {
         var raidsize = $('input[name="raidsize"]:checked').val()
         var percentile = $('input[name="percentile"]:checked').val()
@@ -516,9 +519,12 @@ $( document ).ready(function() {
             case "linechart":
                 $("#mega-linechart").show();
 
-                for(var i = biglinechart.series.length - 1; i > -1; i--){ biglinechart.series[i].destroy(); }
+                if (percentile == "pall") {
+                    $('#50').click();
+                    return;
+                }
 
-                console.log(linechartsdata);
+                for(var i = biglinechart.series.length - 1; i > -1; i--){ biglinechart.series[i].destroy(); }
                 for (var i = 0; i < linechartsdata["data"][charttype][role][raidsize][boss][percentile]["series"].length; i++) {
                     biglinechart.addSeries(linechartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][i], false);
                 }
@@ -533,46 +539,26 @@ $( document ).ready(function() {
                     $("#boxchart3").show();
                     charttype = "boxchart";
 
-                    for(var i = boxchart1.series.length - 1; i > -1; i--) { boxchart1.series[i].destroy(); }
-                    for(var i = boxchart2.series.length - 1; i > -1; i--) { boxchart2.series[i].destroy(); }
-                    for(var i = boxchart3.series.length - 1; i > -1; i--) { boxchart3.series[i].destroy(); }
-                    console.log(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][0])
-                    for (var i = boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][0].length-1; i >= 0; i--) {
-                        if (boss == "all" && i != 0) { continue; }
-                        boxchart1.addSeries(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][0][i], false);
-                    }
-                    boxchart1.redraw();
-                    for (var i = boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][1].length-1; i >= 0; i--) {
-                        if (boss == "all" && i != 0) { continue; }
-                        boxchart2.addSeries(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][1][i], false);
-                    }
-                    boxchart2.redraw();
-                    for (var i = boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][2].length-1; i >= 0; i--) {
-                        if (boss == "all" && i != 0) { continue; }
-                        boxchart3.addSeries(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][2][i], false);
-                    }
-                    boxchart3.redraw();
+                    boxchartsarr.forEach(function (curr, ind, all) {
+                        for(var i = curr.series.length - 1; i > -1; i--) { curr.series[i].destroy(); }
+                        for (var i = boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][ind].length-1; i >= 0; i--) {
+                            if (boss == "all" && i != 0) { continue; }
+                            curr.addSeries(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][ind][i], false);
+                        }
+                        curr.redraw();
+                    });
                 } else {
                     $("#barchart1").show();
                     $("#barchart2").show();
                     $("#barchart3").show();
 
-                    for(var i = barchart1.series.length - 1; i > -1; i--){ barchart1.series[i].destroy(); }
-                    for(var i = barchart2.series.length - 1; i > -1; i--){ barchart2.series[i].destroy(); }
-                    for(var i = barchart3.series.length - 1; i > -1; i--){ barchart3.series[i].destroy(); }
-
-                    for (var i = 0; i < barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][0].length; i++) {
-                        barchart1.addSeries(barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][0][i], false);
-                    }
-                    barchart1.redraw();
-                    for (var i = 0; i < barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][1].length; i++) {
-                        barchart2.addSeries(barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][1][i], false);
-                    }
-                    barchart2.redraw();
-                    for (var i = 0; i < barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][2].length; i++) {
-                        barchart3.addSeries(barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][2][i], false);
-                    }
-                    barchart3.redraw();
+                    barchartsarr.forEach(function (curr, ind, all) {
+                        for(var i = curr.series.length - 1; i > -1; i--){ curr.series[i].destroy(); }
+                        for (var i = 0; i < barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][ind].length; i++) {
+                            curr.addSeries(barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][ind][i], false);
+                        }
+                        curr.redraw();
+                    });
                 }
 
                 break;
