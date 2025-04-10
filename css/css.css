@@ -1,0 +1,81 @@
+body {
+    background-color: #141414;
+    font-family: sans-serif;
+    color: #FFFFFF;
+}
+
+#mega-linechart {
+    height: 85vh;
+}
+
+#barchart1 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+#barchart2 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+#barchart3 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+#boxchart1 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+#boxchart2 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+#boxchart3 {
+    width: 33%;
+    float: left;
+    height: 85vh;
+}
+
+td.title {
+    text-align:right;
+    padding-right: 5px;
+}
+
+.boxed label {
+    color: #888888;
+    display: inline-block;
+    width: 104px;
+    height: 15px;
+    padding: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: solid 2px #333333;
+    font-size: 12px;
+    text-align: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .boxed input[type="radio"] {
+    display: none;
+  }
+  
+  .boxed input[type="radio"]:checked + label {
+    color: #FFFFFF;
+    border: solid 2px #FFFFFF;
+  }

@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+    <head>
+        <title> MoP Class Statistics </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="css/css.css" rel="stylesheet"/>
+        <script src="js/highstock.js"></script>
+        <script src="js/highcharts-more.js"></script>
+        <script src="js/highstock-theme.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/exporting.js"></script>
+        <script src="js/data/boxcharts-data.js"></script>
+        <script src="js/data/barcharts-data.js"></script>
+        <script src="js/data/linecharts-data.js"></script>
+        <script src="js/mop.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <form class="boxed">
+                <table>
+                    <tr>
+                        <td>RAIDSIZE</td>
+                        <td>
+                            <input type="radio" id="10" name="raidsize" value="10" checked="checked">
+                            <label for="10">10m</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="25" name="raidsize" value="25">
+                            <label for="25">25m</label>
+                        </td>
+                        <td class="title">
+                            TYPE
+                        </td>
+                        <td>
+                            <input type="radio" id="dps" name="type" value="dps" checked="checked">
+                            <label for="dps">DPS</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="heal" name="type" value="heal">
+                            <label for="heal">HEAL</label>
+                        </td>
+                        <td class="title">
+                            CHART
+                        </td>
+                        <td>
+                            <input type="radio" id="linechart" name="chart" value="linechart" checked="checked">
+                            <label for="linechart">LINECHART</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="barchart" name="chart" value="barchart">
+                            <label for="barchart">BARCHART</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>PERCENTILE</td>
+                        <td>
+                            <input type="radio" id="pall" name="percentile" value="pall">
+                            <label for="pall">ALL</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="50" name="percentile" value="50">
+                            <label for="50">50</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="60" name="percentile" value="60">
+                            <label for="60">60</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="70" name="percentile" value="70">
+                            <label for="70">70</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="80" name="percentile" value="80">
+                            <label for="80">80</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="90" name="percentile" value="90" checked="checked">
+                            <label for="90">90</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="95" name="percentile" value="95">
+                            <label for="95">95</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="99" name="percentile" value="99">
+                            <label for="99">99</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="MAX" name="percentile" value="100">
+                            <label for="MAX">100 (max)</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>BOSS</td>
+                        <td>
+                            <input type="radio" id="all" name="boss" value="all" checked="checked">
+                            <label for="all">ALL BOSSES</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1602" name="boss" value="1602">
+                            <label for="1602">Immerseus</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1598" name="boss" value="1598">
+                            <label for="1598">Fallen Protectors</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1624" name="boss" value="1624">
+                            <label for="1624">Norushen</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1604" name="boss" value="1604">
+                            <label for="1604">Sha of Pride</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1622" name="boss" value="1622">
+                            <label for="1622">Galakras</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1600" name="boss" value="1600">
+                            <label for="1600">Iron Juggernaut</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1606" name="boss" value="1606">
+                            <label for="1606">Dark Shaman</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1603" name="boss" value="1603">
+                            <label for="1603">General Nazgrim</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1595" name="boss" value="1595">
+                            <label for="1595">Malkorok</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1594" name="boss" value="1594">
+                            <label for="1594">Spoils Pandaria</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1599" name="boss" value="1599">
+                            <label for="1599">Thok Bloodthirsty</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1601" name="boss" value="1601">
+                            <label for="1601">Siegecr. Blackfuse</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1593" name="boss" value="1593">
+                            <label for="1593">Paragons Klaxxi</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1623" name="boss" value="1623">
+                            <label for="1623">Garrosh</label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="mega-linechart"></div>
+        <div id="barchart1"></div>
+        <div id="barchart2"></div>
+        <div id="barchart3"></div>
+        <div id="boxchart1"></div>
+        <div id="boxchart2"></div>
+        <div id="boxchart3"></div>
+    </body>
+</html>
