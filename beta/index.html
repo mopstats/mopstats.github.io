@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <title> MoP Class Statistics </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="css/css.css" rel="stylesheet"/>
+        <script src="js/highstock.js"></script>
+        <script src="js/highcharts-more.js"></script>
+        <script src="js/highstock-theme.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/exporting.js"></script>
+        <script src="js/data/boxcharts-data.js"></script>
+        <script src="js/mop.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <form class="boxed">
+                <table>
+                    <tr>
+                        <td>RAIDSIZE</td>
+                        <td>
+                            <input type="radio" id="10" name="raidsize" value="10" checked="checked">
+                            <label for="10">10m</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="25" name="raidsize" value="25">
+                            <label for="25">25m</label>
+                        </td>
+                        <td class="title">
+                            TYPE
+                        </td>
+                        <td>
+                            <input type="radio" id="dps" name="type" value="dps" checked="checked">
+                            <label for="dps">DPS</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="heal" name="type" value="heal">
+                            <label for="heal">HEAL</label>
+                        </td>
+                        <td class="title">
+                            DIFFICULTY
+                        </td>
+                        <td>
+                            <input type="radio" id="normal" name="difficulty" value="0" checked="checked">
+                            <label for="normal">NORMAL</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="heroic" name="difficulty" value="1">
+                            <label for="heroic">HEROIC</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PERCENTILE</td>
+                        <td>
+                            <input type="radio" id="pall" name="percentile" value="pall" checked="checked">
+                            <label for="pall">ALL</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>BOSS</td>
+                        <td>
+                            <input type="radio" id="all" name="boss" value="all" checked="checked">
+                            <label for="all">ALL BOSSES</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1395" name="boss" value="1395">
+                            <label for="1395">The Stone Guard</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1390" name="boss" value="1390">
+                            <label for="1390">Feng the Accursed</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1434" name="boss" value="1434">
+                            <label for="1434">Gara'jal the Spiritbinder</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1436" name="boss" value="1436">
+                            <label for="1436">The Spirit Kings</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1500" name="boss" value="1500">
+                            <label for="1500">Elegon</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1407" name="boss" value="1407">
+                            <label for="1407">Will of the Emperor</label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="boxchart"></div>
+    </body>
+</html>
