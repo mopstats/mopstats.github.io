@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <title> MoP Class Statistics </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="css/css.css" rel="stylesheet"/>
+        <script src="js/highstock.js"></script>
+        <script src="js/highcharts-more.js"></script>
+        <script src="js/highstock-theme.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/exporting.js"></script>
+        <script src="js/data/boxcharts-data.js"></script>
+        <script src="js/mop.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <form class="boxed">
+                <table>
+                    <tr>
+                        <td>RAIDSIZE</td>
+                        <td>
+                            <input type="radio" id="10" name="raidsize" value="10" checked="checked">
+                            <label for="10">10m</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="25" name="raidsize" value="25">
+                            <label for="25">25m</label>
+                        </td>
+                        <td class="title">
+                            TYPE
+                        </td>
+                        <td>
+                            <input type="radio" id="dps" name="type" value="dps" checked="checked">
+                            <label for="dps">DPS</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="heal" name="type" value="heal">
+                            <label for="heal">HEAL</label>
+                        </td>
+                        <td class="title">
+                            DIFFICULTY
+                        </td>
+                        <td>
+                            <input type="radio" id="normal" name="difficulty" value="0" checked="checked">
+                            <label for="normal">NORMAL</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="heroic" name="difficulty" value="1">
+                            <label for="heroic">HEROIC</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>PERCENTILE</td>
+                        <td>
+                            <input type="radio" id="pall" name="percentile" value="pall" checked="checked">
+                            <label for="pall">ALL</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>BOSS</td>
+                        <td>
+                            <input type="radio" id="all" name="boss" value="all" checked="checked">
+                            <label for="all">ALL BOSSES</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1507" name="boss" value="1507">
+                            <label for="1507">IV Zor'lok</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1504" name="boss" value="1504">
+                            <label for="1504">Blade Lord Ta'yak</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1463" name="boss" value="1463">
+                            <label for="1463">Garalon</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1498" name="boss" value="1498">
+                            <label for="1498">Wind Lord Mel'jarak</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1499" name="boss" value="1499">
+                            <label for="1499">Amber-shaped Un'sok</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1501" name="boss" value="1501">
+                            <label for="1501">Grand Empress Shek'zeer</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1409" name="boss" value="1409">
+                            <label for="1409">Protectors of the Endless</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1505" name="boss" value="1505">
+                            <label for="1505">Tsulong</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1506" name="boss" value="1506">
+                            <label for="1506">Lei Shi</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="1431" name="boss" value="1431">
+                            <label for="1431">Sha of Fear</label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="boxchart"></div>
+    </body>
+</html>
