@@ -93,6 +93,7 @@ $( document ).ready(function() {
             boxchart.addSeries(boxchartsdata["data"]["boxchart"][role][raidsize][difficulty][boss]["all"]["series"][i], false);
         }
         boxchart.redraw();
+        boxchart.xAxis[0].setExtremes(null,null);
     }
 
     $('input:radio').change(function(e) {

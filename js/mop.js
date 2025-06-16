@@ -529,6 +529,7 @@ $( document ).ready(function() {
                     biglinechart.addSeries(linechartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][i], false);
                 }
                 biglinechart.redraw();
+                biglinechart.xAxis[0].setExtremes(null,null);
 
                 break;
 
@@ -546,6 +547,7 @@ $( document ).ready(function() {
                             curr.addSeries(boxchartsdata["data"][charttype][role][raidsize][boss]["all"]["series"][ind][i], false);
                         }
                         curr.redraw();
+                        curr.xAxis[0].setExtremes(null,null);
                     });
                 } else {
                     $("#barchart1").show();
@@ -558,6 +560,7 @@ $( document ).ready(function() {
                             curr.addSeries(barchartsdata["data"][charttype][role][raidsize][boss][percentile]["series"][ind][i], false);
                         }
                         curr.redraw();
+                        curr.xAxis[0].setExtremes(null,null);
                     });
                 }
 
