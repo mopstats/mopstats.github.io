@@ -44,7 +44,7 @@ $( document ).ready(function() {
         },
     
         title: {
-            text: 'Both Weekends'
+            text: 'Rebalance Weekend'
         },
     
         legend: {
